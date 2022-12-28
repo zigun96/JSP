@@ -1,0 +1,9 @@
+.metadata/
+*.component
+*.container
+*.MF
+*.policy
+*.properties
+
+/.recommenders/
+Servers/*
