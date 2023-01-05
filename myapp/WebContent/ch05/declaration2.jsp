@@ -9,7 +9,7 @@
 	public int plusMethod() {
 		return one + two;
 	}
-	String msg;
+	 String msg;
 	int three;
 %>
 <body>
