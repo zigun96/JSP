@@ -4,8 +4,7 @@
 <html>
 <%request.setCharacterEncoding("UTF-8"); %>
 <%!
-	int num1;
-	int num2;
+	int num1, num2;
 	int result = 0;
 	String oper;
 %>

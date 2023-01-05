@@ -45,13 +45,15 @@ public class CalcServlet extends HttpServlet {
              }
              out.println("계산결과: " + num1 + oper + num2 + "=" + result);
           } catch (ArithmeticException e) {
-             out.println("나눗셈 에러!\n0으로 나눌 수 없습니다!");
-             
+        	  out.println("<h2>나눗셈 에러!</h2>");
+        	  out.println("'0'으로 나눌 수 없습니다!");
+        	  return;
           }
           
        } catch (NumberFormatException e) {
-          out.println("숫자 입력 에러!\n숫자는 정수만 입력하세요!");
-          
+    	   out.println("<h2>값 입력 에러!</h2>");
+    	   out.println("숫자는 '정수'만 입력하세요!");
+    	   return;
        }
     }
 }

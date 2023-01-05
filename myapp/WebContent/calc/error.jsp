@@ -11,11 +11,14 @@
 <%! String errorName; %>
 <%
 	request.setCharacterEncoding("UTF-8");
-	errorName = exception.getClass().getName(); %>
+	errorName = exception.getClass().getName();
+%>
 에러 메세지 : 
 <%	if (errorName.equals("java.lang.ArithmeticException")) {
+		out.println("입력 범위 오류");
 		out.println("0으로 나눌 수 없습니다 !! \n");
 	} else if (errorName.equals("java.lang.NumberFormatException")) {
+		out.println("입력 타입 오류");
 		out.println("정수만 입력하세요 !! \n");
 	}
 %>
