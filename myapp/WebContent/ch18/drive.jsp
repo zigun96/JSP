@@ -1,19 +1,19 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Drive</title>
 </head>
 <body>
-<form method="post" enctype="multipart/form-data">
-	<input type="file" name="file" />
-	<button type="submit">업로드</button>
-</form>
-<ul>
-	<c:forEach var="item" items="${fileList}">
-		<li>${item}</li>
-	</c:forEach>
-</ul>
+	<form method="post" enctype="multipart/form-data">
+		<input type="file" name="file" />
+		<button type="submit">업로드</button>
+	</form>
+	<ul>
+		<c:forEach var="item" items="${fileList}">
+			<li><a href="downloadServlet/${item}">${item}</a></li>
+		</c:forEach>
+	</ul>
 </body>
 </html>
