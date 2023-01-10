@@ -23,7 +23,7 @@ public class DriveServlet extends HttpServlet {
 	public void init() throws ServletException {
 		super.init();
 		// 업로드 폴더 지정
-		uploadPath = getServletContext().getRealPath("WEB-INF/upload");
+		uploadPath = getServletContext().getRealPath("upload");
 		/* 지정된 업로드 패스 콘솔 출력 */
 		System.out.println(uploadPath);
 	}
@@ -36,16 +36,28 @@ public class DriveServlet extends HttpServlet {
 		request.setAttribute("fileList", fileList);
 
 		/* drive.jsp 가져와서 연결 */
-		RequestDispatcher dispatcher = request.getRequestDispatcher("./drive.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/drive.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String method = request.getParameter("_method").toUpperCase();
+		System.out.println(method);
+		if("DELETE".equalsIgnoreCase(method)) {
+			doDelete(request, response);
+			return;
+		}
 		Part filePart = request.getPart("file");
 		String fileName = filePart.getSubmittedFileName();
 		filePart.write(new File(uploadPath, fileName).getPath());
 
+		response.sendRedirect("./driveServlet");
+	}
+	@Override
+	protected void doDelete (HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+		String fileName = request.getParameter("name");
+		new File(uploadPath, fileName).delete();
 		response.sendRedirect("./driveServlet");
 	}
 }
