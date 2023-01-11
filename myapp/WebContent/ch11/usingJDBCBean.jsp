@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, ch11.*"%>
+<!-- 자바 빈 연결 -->
 <jsp:useBean id="regMgr" class="ch11.RegisterMgr" scope="page" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>JSP에서 데이터베이스 연동</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<!-- 스타일 연결 -->
+<link href="../ch09/style.css" rel="stylesheet" type="text/css">
 </head>
 <body bgcolor="#FFFFCC">
 	<h2>Bean을 사용한 데이터베이스 연동 예제입니다.</h2>
@@ -23,6 +25,7 @@
 			<td><strong>PHONE</strong></td>
 			<td><strong>ZIPCODE/ADDRESS</strong></td>
 			<td><strong>JOB</strong></td>
+			<td><strong>NATION</strong></td>
 		</tr>
 		<%
 			Vector<RegisterBean> vlist = regMgr.getRegisterList();
@@ -40,6 +43,7 @@
 			<td><%=regBean.getPhone()%></td>
 			<td><%=regBean.getZipcode()%>/<%=regBean.getAddress()%></td>
 			<td><%=regBean.getJob()%></td>
+			<td><%=regBean.getNation()%></td>
 			<%
 				}
 			%>
