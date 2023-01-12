@@ -34,7 +34,7 @@
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td><input name="name" size="15" required></td>
+			<td><input name="name" size="15"></td>
 			<td>고객실명을 적어주세요.</td>
 		</tr>
 		<tr>

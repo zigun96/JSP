@@ -1,19 +1,32 @@
 function inputCheck() {
-	const {mem_id, mem_pwd, mem_repwd} = document.regFrm;
-	if (!mem_id.value.match(/^[a-zA-Z0-9]{3,20}$/)) {
-		alert('ì•„ì´ë””ëŠ” 3 ~ 20ìë¡œ ì…ë ¥í•˜ì„¸ìš”!');
+	const {id, pwd, repwd, name, birthday, number, email} = document.regForm;
+	if (!id.value.match(/^[a-zA-Z0-9]{3,20}$/)) {
+		alert('¾ÆÀÌµğ´Â 3 ~ 20ÀÚ·Î ÀÔ·ÂÇÏ¼¼¿ä!');
 		return;	
 	}
-	if (!mem_pwd.value.match(/^\w{9,}$/)) {
-		alert('ë¹„ë°€ë²ˆí˜¸ëŠ” 9ìì´ìƒìœ¼ë¡œ ì…ë ¥í•˜ì„¸ìš”!');
+	if (!pwd.value.match(/^\w{9,}$/)) {
+		alert('ºñ¹Ğ¹øÈ£´Â 9ÀÚÀÌ»óÀ¸·Î ÀÔ·ÂÇÏ¼¼¿ä!');
 		return;
 	}
-	if (!mem_repwd.value.match(/^\w{9,}$/)) {
-		alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”!');
+	if (!repwd.value.match(/^\w{9,}$/)) {
+		alert('ºñ¹Ğ¹øÈ£¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä!');
+		return;
 	}
-	if (!mem_birthday.value.match(/^\d{3}-\d{4}-\d{4}$/)) {
-		alert('ì „í™”ë²ˆí˜¸ë¥¼ ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”!');
+	if (!name.value.length() >= 2) {
+		alert('ÀÌ¸§Àº µÎ ±ÛÀÚ ÀÌ»ó ÀÔ·ÂÇÏ¼Å¾ßÇÕ´Ï´Ù !');
+		return;
 	}
-	
-	document.regFrm.submit();
+	if (!birthday.value.match(/^\d{4}.\d{2}.\d{2}$/)) {
+		alert('1990.01.01 Çü½ÄÀ¸·Î ÀÔ·ÂÇØÁÖ¼¼¿ä!');
+		return;
+	}
+	if (!email.value.match(/^[a-zA-Z0-9]{3, 11}@[a-zA-Z].[a-z]$/)) {
+		alert('xxx@xxxxx.xxx Çü½ÄÀ¸·Î ÀÔ·ÂÇØÁÖ¼¼¿ä!');
+		return;
+	}
+	if (!number.value.match(/^\d{3}-\d{4}-\d{4}$/)) {
+		alert('ÀüÈ­¹øÈ£¸¦ ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä!');
+		return;
+	}
+	document.regForm.submit();
 }
