@@ -5,6 +5,7 @@
 	Cookie[] cookies = request.getCookies();
 	if (cookies != null) {
 		for (int i = 0; i < cookies.length; i++) {
+			/* 아이디 체크 */
 			if (cookies[i].getName().equals("idKey")) {
 				id = cookies[i].getValue();
 			}

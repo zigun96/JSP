@@ -4,8 +4,10 @@
 <%
 	String cookieName = "";
 	String id = "";
+	/* 클라이언트가 보낸 쿠키 정보 읽기 */
 	Cookie[] cookies = request.getCookies();
 	if (cookies != null) {
+		/* 배열의 형태로 쿠키값을 가져옴 */
 		for(int i = 0; i < cookies.length; i++) {
 			if(cookies[i].getName().equals("idKey")) {
 				cookieName = cookies[i].getName();

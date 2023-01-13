@@ -38,6 +38,7 @@ public class RegisterMgr {
 		} catch(Exception ex) {
 			System.out.println("Exception" + ex);
 		} finally {
+			/*쿼리 실행*/
 			pool.freeConnection(con, pstmt, rs);
 		}
 		return loginCon;

@@ -12,7 +12,8 @@
 <link href="../ch09/style.css" rel="stylesheet" type="text/css">
 </head>
 <body bgcolor="#ffffff">
-	<h2>Bean을 사용한 데이터베이스 연동 예제입니다.</h2>
+<%@ include file="sessionLoginOK.jsp" %>
+	<h2>전체회원 조회</h2>
 	<h3>회원정보</h3>
 	<table bgcolor="a6cec0" bordercolor="#0000ff" border="1">
 		<tr>
@@ -44,12 +45,10 @@
 			<td><%=regBean.getZipcode()%>/<%=regBean.getAddress()%></td>
 			<td><%=regBean.getJob()%></td>
 			<td><%=regBean.getNation()%></td>
-			</tr>
 			<%
-			}
+				}
 			%>
-			
-		
+		</tr>
 	</table>
 	<br/>
 	total records : <%=counter%>

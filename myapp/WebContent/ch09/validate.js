@@ -12,7 +12,7 @@ function inputCheck() {
 		alert('비밀번호를 다시 확인해주세요!');
 		return;
 	}
-	if (!name.value.length() >= 2) {
+	if (!name.length() >= 2) {
 		alert('이름은 두 글자 이상 입력하셔야합니다 !');
 		return;
 	}
