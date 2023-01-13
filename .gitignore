@@ -1,5 +1,4 @@
 .metadata/
-*.component
 *.container
 *.MF
 *.policy
