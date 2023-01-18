@@ -1,20 +1,18 @@
-package ch11;
+package ch14;
 
-/*getter & setter*/
-public class RegisterBean {
+public class MemberBean {
+
 	private String id;
 	private String pwd;
 	private String name;
-	private String num1;
-	private String num2;
+	private String gender;
+	private String birthday;
 	private String email;
-	private String phone;
 	private String zipcode;
 	private String address;
-	private String hobby;
+	private String hobby[];
 	private String job;
 	private String nation;
-	
 	public String getId() {
 		return id;
 	}
@@ -33,29 +31,23 @@ public class RegisterBean {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getNum1() {
-		return num1;
+	public String getGender() {
+		return gender;
 	}
-	public void setNum1(String num1) {
-		this.num1 = num1;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
-	public String getNum2() {
-		return num2;
+	public String getBirthday() {
+		return birthday;
 	}
-	public void setNum2(String num2) {
-		this.num2 = num2;
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
 	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
 	}
 	public String getZipcode() {
 		return zipcode;
@@ -66,14 +58,14 @@ public class RegisterBean {
 	public String getAddress() {
 		return address;
 	}
-	public String getHobby() {
-		return hobby;
-	}
-	public void setHobby(String hobby) {
-		this.hobby = hobby;
-	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String[] getHobby() {
+		return hobby;
+	}
+	public void setHobby(String[] hobby) {
+		this.hobby = hobby;
 	}
 	public String getJob() {
 		return job;
@@ -87,5 +79,4 @@ public class RegisterBean {
 	public void setNation(String nation) {
 		this.nation = nation;
 	}
-	
 }
