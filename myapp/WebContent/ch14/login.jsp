@@ -28,10 +28,9 @@
 		<%if (id != null) {%>
 		<b><%=id%></b>님 환영 합니다.
 		<p>제한된 기능을 사용 할 수가 있습니다.<p/>
-			<a href="selfInfo.jsp">자신 정보 조회</a>|
-			<a href="logout.jsp">로그아웃</a>
+			<a href="../ch14/logout.jsp">로그아웃</a>
 			<%} else {%>
-		<form name="loginFrm" method="post" action="loginProc.jsp">
+		<form name="loginFrm" method="post" action="../ch14/loginProc.jsp">
 			<table>
 				<tr>
 					<td align="center" colspan="2"><h4>로그인</h4></td>

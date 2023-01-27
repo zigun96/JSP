@@ -9,6 +9,7 @@
 	String msg;
 	String url;
 %>
+
 <%
 		String sdate = request.getParameter("sdateY")+"-"+
 							   request.getParameter("sdateM")+"-"+

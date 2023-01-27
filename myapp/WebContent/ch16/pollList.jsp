@@ -9,7 +9,7 @@
 <body bgcolor="#FFFFCC">
 	<div align="center">
 		<br/>
-		<h2>투표프로그램</h2>
+		<h2>설문조사 프로그램</h2>
 		<hr width="600"/>
 		<b>설문폼</b>
 		<!--폴 리스트 폼 자리-->

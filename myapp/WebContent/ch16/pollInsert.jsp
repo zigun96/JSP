@@ -1,13 +1,19 @@
 <%@ page contentType="text/html; charset=EUC-KR" %>
 <html>
 <head>
+<%		if (session.getAttribute("name") == null){ %>
+			<script>
+			alert("설문 추가를 하려면 로그인을 하세요.");
+			history.back();
+			</script>
+<% 		}%>
 <title>JSP Poll</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body bgcolor="#FFFFCC">
 	<div align="center">
 		<br />
-		<h2>투표프로그램</h2>
+		<h2>설문조사 프로그램</h2>
 		<hr width="600" />
 		<b>설문작성</b>
 		<hr width="600" />

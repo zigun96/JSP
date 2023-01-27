@@ -1,3 +1,4 @@
+<%@page import="ch14.*"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <jsp:useBean id="mMgr" class="ch14.MemberMgr"/>
@@ -12,6 +13,8 @@
 	if(result) {
 		session.setAttribute("idKey", id);
 		msg = "로그인에 성공 하였습니다.";
+		MemberBean bean = mMgr.getMember(id);
+		session.setAttribute("name", bean.getName());
 		}
 %>
 <script>

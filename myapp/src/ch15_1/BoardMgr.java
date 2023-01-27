@@ -34,7 +34,7 @@ public class BoardMgr {
 		}
 	}
 
-	// �Խ��� ����Ʈ
+	// 占쌉쏙옙占쏙옙 占쏙옙占쏙옙트
 	public Vector<BoardBean> getBoardList(String keyField, String keyWord,
 			int start, int end) {
 		Connection con = null;
@@ -67,6 +67,7 @@ public class BoardMgr {
 				bean.setRef(rs.getInt("ref"));
 				bean.setDepth(rs.getInt("depth"));
 				bean.setRegdate(rs.getString("regdate"));
+				bean.setPass(rs.getString("pass"));
 				bean.setCount(rs.getInt("count"));
 				vlist.add(bean);
 			}
@@ -78,7 +79,7 @@ public class BoardMgr {
 		return vlist;
 	}
 	
-	//�� �Խù���
+	//占쏙옙 占쌉시뱄옙占쏙옙
 	public int getTotalCount(String keyField, String keyWord) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -107,7 +108,7 @@ public class BoardMgr {
 		return totalCount;
 	}
 	
-	// �Խù� �Է�
+	// 占쌉시뱄옙 占쌉뤄옙
 	public void insertBoard(HttpServletRequest req) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -157,7 +158,7 @@ public class BoardMgr {
 		}
 	}
 	
-	// �Խù� ����
+	// 占쌉시뱄옙 占쏙옙占쏙옙
 	public BoardBean getBoard(int num) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -193,7 +194,7 @@ public class BoardMgr {
 		return bean;
 	}
 
-	// ��ȸ�� ����
+	// 占쏙옙회占쏙옙 占쏙옙占쏙옙
 	public void upCount(int num) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -211,7 +212,7 @@ public class BoardMgr {
 		}
 	}
 
-	// �Խù� ����
+	// 占쌉시뱄옙 占쏙옙占쏙옙
 	public void deleteBoard(int num) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -241,7 +242,7 @@ public class BoardMgr {
 		}
 	}
 
-	// �Խù� ����
+	// 占쌉시뱄옙 占쏙옙占쏙옙
 	public void updateBoard(BoardBean bean) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -262,7 +263,7 @@ public class BoardMgr {
 		}
 	}
 
-	// �Խù� �亯
+	// 占쌉시뱄옙 占썰변
 	public void replyBoard(BoardBean bean) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -290,7 +291,7 @@ public class BoardMgr {
 		}
 	}
 
-	// �亯�� ��ġ�� ����
+	// 占썰변占쏙옙 占쏙옙치占쏙옙 占쏙옙占쏙옙
 	public void replyUpBoard(int ref, int pos) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -309,7 +310,7 @@ public class BoardMgr {
 		}
 	}
 
-	//���� �ٿ�ε�
+	//占쏙옙占쏙옙 占쌕울옙琯占�
 		public void downLoad(HttpServletRequest req, HttpServletResponse res,
 				JspWriter out, PageContext pageContext) {
 			try {
@@ -344,7 +345,7 @@ public class BoardMgr {
 			}
 		}
 		
-	//����¡ �� �� �׽�Ʈ�� ���� �Խù� ���� �޼ҵ� 
+	//占쏙옙占쏙옙징 占쏙옙 占쏙옙 占쌓쏙옙트占쏙옙 占쏙옙占쏙옙 占쌉시뱄옙 占쏙옙占쏙옙 占쌨소듸옙 
 	public void post1000(){
 		Connection con = null;
 		PreparedStatement pstmt = null;

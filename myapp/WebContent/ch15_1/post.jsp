@@ -4,27 +4,13 @@
 <title>JSP Board</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script>
-	function check() {
-		if (document.postFrm.name.value == "") {
-			alert("글쓰기를 하려면 성명을 꼭 입력하세요.");
-			document.postFrm.name.focus();
-			return false;
-		}
-		
-		if (document.postFrm.subject.value == "") {
-			alert("글쓰기를 하려면 제목을 꼭 입력하세요.");
-			document.postFrm.subject.focus();
-			return false;
-		}
-		
-		if (document.postFrm.content.value == "") {
-			alert("글쓰기를 하려면 내용을 꼭 입력하세요.");
-			document.postFrm.content.focus();
-			return false;
-		}
-		document.postFrm.submit();
-	}
 </script>
+<%		if (session.getAttribute("name") == null){ %>
+			<script>
+			alert("글쓰기를 하려면 로그인을 하세요.");
+			history.back();
+			</script>
+<% 		}%>
 </head>
 <body bgcolor="#FFFFCC">
 	<div align="center">
@@ -44,7 +30,8 @@
 						<table align="center">
 							<tr>
 								<td width="10%">성 명</td>
-								<td width="90%"><input name="name" size="10" maxlength="8"></td>
+								<td width="90%">
+								<input name="name" size="10" maxlength="8" value="<%=session.getAttribute("name")%>"></td>
 							</tr>
 							<tr>
 								<td>제 목</td>

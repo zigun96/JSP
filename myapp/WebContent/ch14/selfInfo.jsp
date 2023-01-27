@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+	pageEncoding="euc-kr"%>
 <%@ page import="java.util.*, ch14.*"%>
 <%!	String gender;%>
 <%	String id = (String)session.getAttribute("idKey");%>
@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="euc-kr">
 <title>자신 정보 조회</title>
 <!-- 스타일 연결 -->
 <link href="style.css" rel="stylesheet" type="text/css">

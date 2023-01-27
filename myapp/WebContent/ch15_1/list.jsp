@@ -65,7 +65,7 @@
 	
 	function read(num){
 		document.readFrm.num.value=num;
-		document.readFrm.action="read.jsp";
+		document.readFrm.action = "read.jsp";
 		document.readFrm.submit();
 	}
 	
@@ -114,6 +114,7 @@
 							BoardBean bean = vlist.get(i);
 							int num = bean.getNum();	
 							String name = bean.getName();
+							
 							String name_sub = "";
 							if (!name.equals("")) {
 								int n = name.length();
@@ -123,14 +124,21 @@
 									}
 									name_sub += name.substring(n-1, n);
 							} else { name_sub = ""; }
-							String subject = bean.getSubject();
+							
+							String pass = bean.getPass();
+							String out_pass = "";
+							
+							if (pass.equals(""))
+								out_pass = "";
+							else out_pass= "[ºñ¹Ð±Û]";
+							String subject = out_pass + bean.getSubject();
 							String regdate = bean.getRegdate();
 							int depth = bean.getDepth();
 							int count = bean.getCount();
 					%>
 					<tr>
 						<td align="center">
-							<%=totalRecord-((nowPage-1)*numPerPage)-i%>
+							<%=totalRecord-((nowPage-1) * numPerPage)-i%>
 						</td>
 						<td>
 						<%

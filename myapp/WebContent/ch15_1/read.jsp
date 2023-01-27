@@ -9,6 +9,8 @@
 	  String keyWord = request.getParameter("keyWord");
 	  bMgr.upCount(num);//조회수 증가
 	  BoardBean bean = bMgr.getBoard(num);//게시물 가져오기
+	  String pass = bean.getPass();
+	  
 	  String name = bean.getName();
 	  String subject = bean.getSubject();
       String regdate = bean.getRegdate();
@@ -24,6 +26,14 @@
 <title>JSP Board</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
+	var pass = "<%=pass%>";
+	if (pass != "") {
+		var inputString = prompt("게시글 작성 시 사용한 비밀번호를 입력하세요");
+		if (inputString != pass) {
+			alert("비밀번호가 다릅니다!!!");
+			history.back();
+		}
+	}
 	function list(){
 	    document.listFrm.submit();
 	 } 
