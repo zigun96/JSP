@@ -12,7 +12,10 @@
 </head>
 <body>
 <h2>EL의 기본문법1</h2>
+<!-- 범위가 더 작은 객체가 우선시 됨 -->
 <p>사이트명: <strong>${siteName}</strong></p>
 <p>request scope : <strong>${requestScope.siteName}</strong></p>
+<%= request.getHeader("host") %><br/>
+<%= request.getHeader("User-Agent") %>
 </body>
 </html>
